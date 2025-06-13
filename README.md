@@ -23,7 +23,10 @@ The project is divided into two main directories:
 - Product listing with search and category filtering
 - Product detail pages
 - Shopping cart using localStorage
-- Checkout process
+- Multi-step checkout process:
+  - Cart page for reviewing items
+  - Checkout page for customer information and payment
+  - Order confirmation page with order details
 - User authentication (login/register)
 - User profile page with order history
 
@@ -130,18 +133,39 @@ Default credentials:
 - `POST /api/login` - Login
 - `POST /api/logout` - Logout (requires authentication)
 
+## Checkout Flow
+The application implements a three-step checkout process:
+1. **Cart Page** (`/cart`)
+   - Review cart items and quantities
+   - Update quantities or remove items
+   - View order summary with subtotal, tax, and total
+   - Proceed to checkout
+2. **Checkout Page** (`/checkout`)
+   - Enter customer information (name, email, phone)
+   - Provide shipping address
+   - Select payment method (simulated)
+   - Add order notes
+   - Place order
+3. **Order Confirmation Page** (`/order-confirmation`)
+   - View order confirmation with order ID
+   - See detailed order information
+   - Print receipt option
+   - Continue shopping
+
 ## Technologies Used
 
 ### Backend
 - Laravel 12
-- Laravel Backpack
+- Laravel Backpack for admin panel
 - Laravel Sanctum for API authentication
-- SQLite/MySQL
+- SQLite/MySQL database
 
 ### Frontend
 - Nuxt.js 3
 - Vue.js 3
-- Tailwind CSS
+- Tailwind CSS for styling
+- Composables for cart and API functionality
+- LocalStorage for cart persistence
 
 ## License
 
